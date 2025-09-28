@@ -18,7 +18,8 @@ export default function Clientes() {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await fetch("http://localhost:3001/cliente");
+        console.log('URL da API:', process.env.NEXT_PUBLIC_API_URL);
+        const response = await fetch("/cliente");
         const data = await response.json();
         setClientes(Array.isArray(data) ? data : []);
       } catch (error) {
