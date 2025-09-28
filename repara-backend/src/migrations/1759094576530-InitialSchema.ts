@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
 
-export class InitialSchema implements MigrationInterface {
+export class InitialSchema1759094576530 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
             name: "cliente",
@@ -113,3 +113,4 @@ export class InitialSchema implements MigrationInterface {
         await queryRunner.dropTable("cliente");
     }
 }
+
