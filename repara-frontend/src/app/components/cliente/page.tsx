@@ -30,9 +30,9 @@ export default function ClientesPage() {
     try {
       setLoading(true);
       setError(null);
-      const [clientesResponse] = await Promise.all([api.get<Cliente[]>('/cliente')]);
-      console.log('Resposta da API:', clientesResponse.data);
-      setClientes(clientesResponse.data);
+      const [clienteRes] = await Promise.all([ api.get('/cliente') ]);
+      console.log(clienteRes.data);
+      setClientes(clienteRes.data);
     } catch (error) {
       console.error('Erro ao carregar clientes:', error);
       setError('Erro ao carregar clientes. Verifique se o backend está rodando.');
