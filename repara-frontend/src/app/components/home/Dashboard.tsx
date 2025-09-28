@@ -36,7 +36,7 @@ export default function Dashboard() {
         const ordens = await ordensResponse.json();
         
         // Buscar dados de clientes
-        const clientesResponse = await fetch("http://localhost:3001/cliente");
+        const clientesResponse = await fetch("https://repara.onrender.com/cliente");
         const clientes = await clientesResponse.json();
         
         // Buscar dados de veículos
