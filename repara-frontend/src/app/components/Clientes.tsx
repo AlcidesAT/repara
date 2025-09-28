@@ -15,11 +15,11 @@ export default function Clientes() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
     const fetchClientes = async () => {
       try {
         console.log('URL da API:', process.env.NEXT_PUBLIC_API_URL);
-        const response = await fetch("/cliente");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cliente`);
         const data = await response.json();
         setClientes(Array.isArray(data) ? data : []);
       } catch (error) {
